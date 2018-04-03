@@ -16,7 +16,7 @@
 		 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book1.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">7 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="en1">7 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -34,7 +34,7 @@
 		 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book12.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">10 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="en2">10 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -78,7 +78,7 @@
 		 	 	</div>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book3.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">7 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="ge1">7 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -100,7 +100,7 @@
 		 	 	</div>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book4.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">10 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="ge2">10 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -122,7 +122,7 @@
 		 	 	</div>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">20 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="ge3">20 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -152,7 +152,7 @@
 		 	 	</div>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">7 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="mth1">7 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -174,7 +174,7 @@
 		 	 	</div>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book7.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">10 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="mth2">10 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -192,7 +192,7 @@
 		 	 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book10.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price">20 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="mth2">20 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -343,13 +343,14 @@ $(".block_book").each(function(){
 			'display',"block"
 		)
     var prive = selectVal.find('.book_price').text()
+    var item = selectVal.find('.book_price').attr('id')
       all_price =all_price + prive*1
       // console.log(all_price)
       $('.all_pice').text(all_price)
 
    xx=`
      <div class="product">
-  	 	 <img class="book" src="`+ atr +`"> <div class="rights"><span '>`+selectVal.find('select').val()+`</span> <img data-price='`+ prive+ `' class="delet_poduct" src="images/delet_poduct.png">
+  	 	 <img data-item="`+item +`" class="book" src="`+ atr +`"> <div class="rights"><span '>`+selectVal.find('select').val()+`</span> <img data-price='`+ prive+ `' class="delet_poduct" src="images/delet_poduct.png">
   	 	 </div>
 
   	 </div>
