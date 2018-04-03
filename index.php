@@ -315,6 +315,7 @@ $('.book_info select').each(function(){
   var all_price=0;
 	var xx = $();
 
+	var ordered_book=[];
 
 // console.log(topStart,leftStart)
 	$('.buy_book_page').css({'top':topStart,
@@ -350,14 +351,20 @@ $(".block_book").each(function(){
 
    xx=`
      <div class="product">
-  	 	 <img data-item="`+item +`" class="book" src="`+ atr +`"> <div class="rights"><span '>`+selectVal.find('select').val()+`</span> <img data-price='`+ prive+ `' class="delet_poduct" src="images/delet_poduct.png">
+  	 	 <img data-item="`+item +`" class="book" src="`+ atr +`"> <div class="rights"><span '>`+selectVal.find('select').val()+`</span> <img data-price='`+ prive+ `' class="delet_poduct" src="images/delet_poduct.png" book=`+item+` bookClass=`+selectVal.find('select').val()+` >
   	 	 </div>
 
   	 </div>
 
    `;
   $('.kalata_inner').append(xx)
-
+  var cur=selectVal.find('select').val();
+  var len=0;
+  for(var i=0;i<cur.length;i++){
+  	if(cur[i]==' '){len=i;break;}
+  }
+  cur=cur.substring(0,len);
+  ordered_book.push({id:item,class:parseInt(cur),price:prive});
 }
 else{
 selectVal.find('select').css('border-color','red')
@@ -370,6 +377,12 @@ selectVal.find('select').css('border-color','red')
 
 // $('.delet_poduct').each(function(){
 	$('.kalata').on('click','img.delet_poduct', function(){
+		for(var i=0;i<ordered_book.length;i++){
+			if(ordered_book[i]['id']==$(this).attr("book")&&ordered_book[i]['class']==$(this).attr("bookClass")){
+				ordered_book.splice(i,1);
+			}
+		}
+
 		$(this).parent().parent().remove();
 		// console.log($(this).attr('data-price')*1, all_price)
 		console.log($(this).attr('data-price')*1, $('.all_pice').text()*1 )
