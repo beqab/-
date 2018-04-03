@@ -776,7 +776,8 @@
  .enter_addres input{
       width: 250px;
 }
-}
+
+
 textarea.ttextt{
     max-width: 400px !important;
     height: 100px !important;
@@ -824,4 +825,34 @@ textarea.ttextt{
 }
 .kalata_auther{
   display: none;
+}
+@media only screen and (max-width: 740px) {
+
+
+   .book_info select{
+     font-size: 11px;
+         padding: 2px 4px 6px;
+   }
+  .book_info button{
+    padding: 3px 4px 5px;
+    font-size: 11px;
+  }
+  .book_info > span {
+    font-size: 17px;
+    display: block;
+}
+.kalata_auther{
+    width: 18vw;
+  }
+  .kalata{
+    width: 19vw;
+  }
+
+}
+@media only screen and (max-width: 580px) {
+   .container_book{
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+
 }
