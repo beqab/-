@@ -120,7 +120,7 @@
 		 	 		წიგნი გაყიდვაში
                        გამოვა 14 მაისიდან
 		 	 	</div>
-		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
+		 	 	<div class="img_book"> <img class="full_img_book" src="images/book5.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="ge3">20 </span> ლარი</span>
 		 	 		<select>
@@ -192,7 +192,7 @@
 		 	 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book10.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="mth2">20 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="mth3">20 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -241,7 +241,7 @@
 			<img src="images/delet_poduct.png">
 		</div>
 		<form>
-		<select>
+		<select id="town">
 			<option>ქალაქი</option>
 			<option>ქალაქი</option>
 			<option>ქალაქი</option>
@@ -249,12 +249,12 @@
 			<option>ქალაქი</option>
 			<option>ქალაქი</option>
 	</select>
-   <input type="text" name="addres" placeholder="მისამართი">
-   <input type="text" name="addres" placeholder="საკონტაქტო ნომერი">
-   <textarea style="    max-width: 400px !important;
+   <input type="text" name="addres" placeholder="მისამართი" id="address">
+   <input type="text" name="addres" placeholder="საკონტაქტო ნომერი" id="contact_number">
+   <textarea id="additional_info" style="    max-width: 400px !important;
     height: 100px !important;
     padding: 4px 8px !important;
-    font-size: 18px !important;" class="ttextt" placeholder="კონტაქტი"></textarea>
+    font-size: 18px !important;" class="ttextt" placeholder="დატოვე კომენტარი"></textarea>
 </form>
 	</div>
 
@@ -267,12 +267,18 @@
 <script type="text/javascript">
 
   function warmatebiTgaigzavna(){
-        
+  		  //additionalIinfo
+  		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(),total_price: all_price, books: JSON.stringify(ordered_book),}, function(data){
+  			console.log(data);
+  			if(data=="Success"){
+  				setTimeout(function(){ 
+	          	$('.bbtest').addClass('hidden_somthing') }, 2000);
+	            $('.hidden_somthing').removeClass('hidden_somthing')
+  			}else{
+  				alert("დაფიქსირდა შეცდომა");
+  			}
+		});
 
-        
-          setTimeout(function(){ 
-          $('.bbtest').addClass('hidden_somthing') }, 2000);
-            $('.hidden_somthing').removeClass('hidden_somthing')
   }
 
 	var topStart =$('.start_by_book').position().top;
@@ -346,7 +352,6 @@ $(".block_book").each(function(){
     var prive = selectVal.find('.book_price').text()
     var item = selectVal.find('.book_price').attr('id')
       all_price =all_price + prive*1
-      // console.log(all_price)
       $('.all_pice').text(all_price)
 
    xx=`
@@ -364,7 +369,7 @@ $(".block_book").each(function(){
   	if(cur[i]==' '){len=i;break;}
   }
   cur=cur.substring(0,len);
-  ordered_book.push({id:item,class:parseInt(cur),price:prive});
+  ordered_book.push({book_id:item,class:parseInt(cur),price:prive});
 }
 else{
 selectVal.find('select').css('border-color','red')
@@ -378,7 +383,7 @@ selectVal.find('select').css('border-color','red')
 // $('.delet_poduct').each(function(){
 	$('.kalata').on('click','img.delet_poduct', function(){
 		for(var i=0;i<ordered_book.length;i++){
-			if(ordered_book[i]['id']==$(this).attr("book")&&ordered_book[i]['class']==$(this).attr("bookClass")){
+			if(ordered_book[i]['book_id']==$(this).attr("book")&&ordered_book[i]['class']==$(this).attr("bookClass")){
 				ordered_book.splice(i,1);
 			}
 		}
