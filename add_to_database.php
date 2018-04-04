@@ -41,6 +41,9 @@ if(isset($_POST["town"],$_POST["address"],$_POST["contact_number"],$_POST["addit
 
 	$book_info=parse_books($books,$book_count);
 
+	if($town=="თბილისი")$book_info[2]=$book_info[2]+3;
+	else $book_info[2]=$book_info[2]+6;
+
 
 	$con = mysqli_connect("localhost","root","","ordered_books");
 	$con->set_charset("utf8");
@@ -55,10 +58,5 @@ if(isset($_POST["town"],$_POST["address"],$_POST["contact_number"],$_POST["addit
 }else{
 	echo "Error";
 }
-
-// თბილისი 3
-// ქუთაისი 6
-// ბათუმი 6
-// რუსთავი 6
 
 ?>
