@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>წიგნების ყიდვა</title>
+	<title>bo</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <body style="background: red">
 
 	<div class="buy_book_page">
-		<div onclick="close_books()" class="close_page hidden_somthing">
+		<div onclick="close_books()" class="close_page book hidden_somthing">
 			 <img class="close_page_img" src="images/delet_poduct.png">
 		</div>
 		 <div class="container_book">
@@ -267,24 +267,23 @@
 	<div class="start_by_book">
 		start
 	</div>
-	<div class="enter_addres hidden_somthing">
+	<div class="enter_addres book hidden_somthing">
 		<button onclick="warmatebiTgaigzavna()" class="oreder_in_adddres">შეკვეთა</button>
-		<div class="cancel_adders">
+		<div class="cancel_adders book">
 			<img src="images/delet_poduct.png">
 		</div>
 		<form>
 			<div>
 		<select id="town">
 			<option class="hidden_somthing" selected="selected">ქალაქი</option> 
+			<!-- <option>თბილისი</option> -->
 			<option>თბილისი</option>
 			<option>ქუთაისი</option>
 			<option>ბათუმი</option>
 			<option>რუსთავი</option>
 	</select>
-	<span style="display: none;" class="shipping" id="shipping"> მიტანა 3 ლარი</span>
-		 	 	</div>
-
-	<span></span>
+		<span style="display: none;" class="shipping" id="shipping"></span>
+	</div>
    <input type="text" name="addres" placeholder="მისამართი" id="address">
    <input type="text" name="addres" placeholder="საკონტაქტო ნომერი" id="contact_number">
    <textarea id="additional_info" style="    max-width: 400px !important;
@@ -304,15 +303,12 @@
 
 	$('#town').change(function(){
 		  if($(this).val() != 'ქალაქი'){
-		  	if($("#town").val() =="თბილისი")$("#shipping").text(" მიტანა 3 ლარი");
-		  	else $("#shipping").text(" მიტანა 6 ლარი");
-
              $('.shipping').css('display','inline')
 		  }
 	})
 
   function warmatebiTgaigzavna(){
-  		if($("#town").val() =="ქალაქი"){
+   		if($("#town").val() =="ქალაქი"){
   			alert("გთხოვთ აირჩიოთ ქალაქი");
   			return;
   		}
@@ -321,14 +317,16 @@
   		for(var i=0;i<$("#contact_number").val().length;i++){
   			if($("#contact_number").val()[i]!=' ')number_count++;
   		}
-  		if(number_count!=9){alert("ტელეფონის ნომერი ზუსტად 9 ციფრისგან უნდა შედგებოდეს");return;}
+ 		if(number_count!=9){alert("ტელეფონის ნომერი ზუსტად 9 ციფრისგან უნდა შედგებოდეს");return;}
 		if($("#contact_number").val()[0]!='5'){alert("ტელეფონის ნომერი 5-ით უნდა იწყებოდეს");return;}
+
 
   		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(),total_price: all_price, books: JSON.stringify(ordered_book),}, function(data){
   			if(data=="Success"){
   				setTimeout(function(){ 
 	          	$('.bbtest').addClass('hidden_somthing') }, 2000);
 	            $('.hidden_somthing').removeClass('hidden_somthing')
+	            $('.enter_addres').addClass('hidden_somthing')
   			}else{
   				alert("დაფიქსირდა შეცდომა");
   			}
@@ -354,6 +352,7 @@ var leftStart =$('.start_by_book').position().left;
 		$('.enter_addres').addClass('hidden_somthing')
 	})
 
+
 $('.book_order_btn').click(function(){
 	$('.enter_addres').removeClass('hidden_somthing')
 })
@@ -371,6 +370,16 @@ $('.book_info select').each(function(){
 	var xx = $();
 
 	var ordered_book=[];
+
+	$('#town').change(function(){
+		  if($(this).val() != 'ქალაქი'){
+		  	if($("#town").val() =="თბილისი")$("#shipping").text(" მიტანა 3 ლარი");
+		  	else $("#shipping").text(" მიტანა 6 ლარი");
+
+             $('.shipping').css('display','inline')
+		  }
+	})
+
 
 // console.log(topStart,leftStart)
 	$('.buy_book_page').css({'top':topStart,
