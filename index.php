@@ -72,10 +72,16 @@
 	     <hr>
 	      <div class="container_book">
 		 	 <div class="block_book">
-		 	 	<div class="weiting_book">
-		 	 		წიგნი გაყიდვაში
-                       გამოვა 20 მაისიდან
-		 	 	</div>
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-20 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 20 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book3.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="ge1">7 </span> ლარი</span>
@@ -94,10 +100,16 @@
 		 	 </div>
 		 	</div>
 		 	 <div class="block_book">
-		 	 	<div class="weiting_book">
-		 	 		წიგნი გაყიდვაში
-                       გამოვა 20 მაისიდან
-		 	 	</div>
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-20 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 20 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book4.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="ge2">10 </span> ლარი</span>
@@ -116,10 +128,16 @@
 		 	 </div>
 		 	</div>
 		 	 	 <div class="block_book">
-		 	 	 	<div class="weiting_book">
-		 	 		წიგნი გაყიდვაში
-                       გამოვა 14 მაისიდან
-		 	 	</div>
+		 	 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 14 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book5.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="ge3">20 </span> ლარი</span>
@@ -146,10 +164,16 @@
 	        <hr>
 	         <div class="container_book">
 		 	 <div class="block_book">
-		 	 	<div class="weiting_book">
-		 	 		წიგნი გაყიდვაში
-                       გამოვა 14 მაისიდან
-		 	 	</div>
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 14 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="mth1">7 </span> ლარი</span>
@@ -168,10 +192,16 @@
 		 	 </div>
 		 	</div>
 		 	 <div class="block_book">
-		 	 	<div class="weiting_book">
-		 	 		წიგნი გაყიდვაში
-                       გამოვა 14 მაისიდან
-		 	 	</div>
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 14 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book7.png"></div>
 		 	 	<div class="book_info">
 		 	 		<span><span class="book_price" id="mth2">10 </span> ლარი</span>
@@ -242,13 +272,12 @@
 		</div>
 		<form>
 		<select id="town">
-			<option>ქალაქი</option>
-			<option>ქალაქი</option>
-			<option>ქალაქი</option>
-			<option>ქალაქი</option>
-			<option>ქალაქი</option>
-			<option>ქალაქი</option>
-	</select>
+			<option>თბილისი</option>
+			<option>თბილისი</option>
+			<option>ქუთაისი</option>
+			<option>ბათუმი</option>
+			<option>რუსთავი</option>
+	</select><span></span>
    <input type="text" name="addres" placeholder="მისამართი" id="address">
    <input type="text" name="addres" placeholder="საკონტაქტო ნომერი" id="contact_number">
    <textarea id="additional_info" style="    max-width: 400px !important;
@@ -269,7 +298,6 @@
   function warmatebiTgaigzavna(){
   		  //additionalIinfo
   		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(),total_price: all_price, books: JSON.stringify(ordered_book),}, function(data){
-  			console.log(data);
   			if(data=="Success"){
   				setTimeout(function(){ 
 	          	$('.bbtest').addClass('hidden_somthing') }, 2000);
@@ -385,6 +413,7 @@ selectVal.find('select').css('border-color','red')
 		for(var i=0;i<ordered_book.length;i++){
 			if(ordered_book[i]['book_id']==$(this).attr("book")&&ordered_book[i]['class']==$(this).attr("bookClass")){
 				ordered_book.splice(i,1);
+				break;
 			}
 		}
 
