@@ -1,4 +1,4 @@
-.d-inline-block{
+/*.d-inline-block{
     display: inline-block;
   }
   .d-flex{
@@ -598,7 +598,7 @@
   display: block;
   padding: 0.5em 1em;
 }
-
+*/
 
 /*frame work top */
 
@@ -723,7 +723,7 @@
   max-height: 308px;
     overflow-x: hidden;
 }
-.product{
+.kalata_inner .product{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -733,7 +733,7 @@
   font-size: 15px;
   border-bottom: 1px solid #707070;
 }
-.your_order{
+.kalata_auther .your_order{
       position: absolute;
     left: 12px;
     top: -28px;
@@ -744,7 +744,7 @@
    width: 40px;
    margin-right: 10px;
 }
-.delet_poduct{
+.kalata_inner .delet_poduct{
   width: 15px;
   cursor: pointer;
 
@@ -769,13 +769,13 @@
   right: 10px;
   z-index:  11;
 }
-.rights{
+.product .rights{
   display: flex;
     align-items: center;
     justify-content: space-between;
     width: 75%;
 }
-.enter_addres{
+.enter_addres.book{
   max-width: 700px;
   width: 100%;
   max-height: 340px;
@@ -791,17 +791,17 @@
   padding: 26px;
   box-sizing: border-box;
 }
-.enter_addres select, .enter_addres input{
+.enter_addres.book select, .enter_addres.book input{
    border:1px solid #707070;
    font-size: 18px;
    padding: 4px 8px 6px;
    width: 130px;
 }
-.enter_addres select option:first-child{
+.enter_addres.book select option:first-child{
 
       display: none !important;
   }
-.enter_addres input{
+.enter_addres.book input{
       width: 250px;
 }
 .complate_ordder{
@@ -832,7 +832,7 @@ textarea.ttextt{
     padding: 4px 8px !important;
     font-size: 18px !important;
 }
-.enter_addres form{
+.enter_addres.book form{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -853,7 +853,7 @@ textarea.ttextt{
     /*padding: 4px 3px 30px;*/
     min-height: 350px;
 }
-.cancel_adders{
+.cancel_adders.book{
   position: absolute;
   top: 5px;
   right: 5px;
@@ -880,7 +880,7 @@ textarea.ttextt{
 .close_page_img{
   cursor: pointer;
 }
-.close_page{
+.close_page.book{
   position: absolute;
   /*transform: translate(-50%, -50%);*/
   right: 0px;
@@ -905,7 +905,7 @@ textarea.ttextt{
 .kalata_auther{
     width: 18vw;
   }
-  .kalata{
+  .kalata_auther .kalata{
     width: 19vw;
   }
 
@@ -916,7 +916,7 @@ textarea.ttextt{
     flex-wrap: wrap;
     justify-content: center;
    }
-   .kalata {
+  .kalata_auther .kalata {
     max-width: 29vw;
     max-height: 300px;
     width: 100%;
@@ -933,26 +933,26 @@ textarea.ttextt{
 .order_sum_price{
   font-size: 11px;
 }
-.your_order {
+.kalata_auther .your_order {
     position: absolute;
     left: 12px;
     top: -21px;
     font-size: 10px;
     color: #707070;
 }
-.kalata img.book {
+.kalata_auther .kalata img.book {
     width: 25px;
     margin-right: 3px;
 }
-.delet_poduct {
+.kalata_inner .delet_poduct {
     width: 10px;
     cursor: pointer;
 }
-.enter_addres{
+.enter_addres.book{
   padding-bottom: 45px;
 }
 
-.rights {
+.product .rights {
     display: flex;
     align-items: center;
     justify-content: space-between;
