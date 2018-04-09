@@ -285,7 +285,7 @@
 		<span style="display: none;" class="shipping" id="shipping"></span>
 	</div>
    <input type="text" name="addres" placeholder="მისამართი" id="address">
-   <input type="text" name="addres" placeholder="საკონტაქტო ნომერი" id="contact_number">
+   <input type="number" name="addres" placeholder="საკონტაქტო ნომერი" id="contact_number">
    <textarea id="additional_info" style="    max-width: 400px !important;
     height: 100px !important;
     padding: 4px 8px !important;
@@ -313,15 +313,12 @@
   			return;
   		}
   		if($("#address").val()==""){alert("გთხოვთ შეავსოთ მისამართის ველი");return;}
-  		var number_count=0;
-  		for(var i=0;i<$("#contact_number").val().length;i++){
-  			if($("#contact_number").val()[i]!=' ')number_count++;
-  		}
- 		if(number_count!=9){alert("ტელეფონის ნომერი ზუსტად 9 ციფრისგან უნდა შედგებოდეს");return;}
+
+		if($("#contact_number").val().length!=9){alert("ტელეფონის ნომერი 9 ციფრისგან უნდა შედგებოდეს");return;}
 		if($("#contact_number").val()[0]!='5'){alert("ტელეფონის ნომერი 5-ით უნდა იწყებოდეს");return;}
 
 
-  		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(),total_price: all_price, books: JSON.stringify(ordered_book),}, function(data){
+  		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(), books: JSON.stringify(ordered_book),}, function(data){
   			if(data=="Success"){
   				setTimeout(function(){ 
 	          	$('.bbtest').addClass('hidden_somthing') }, 2000);

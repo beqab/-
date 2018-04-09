@@ -1,5 +1,6 @@
 <?php
 
+include "connection.php";
 
 
 function parse_books($ordered_books,$book_count){
@@ -27,13 +28,12 @@ $sum_price=$sum_price+intval($ordered_books[$i]["price"]);
 }
 
 
-if(isset($_POST["town"],$_POST["address"],$_POST["contact_number"],$_POST["additional_info"],$_POST["total_price"],$_POST["books"])){
+if(isset($_POST["town"],$_POST["address"],$_POST["contact_number"],$_POST["additional_info"],$_POST["books"])){
 
 	$town=htmlspecialchars($_POST["town"],ENT_QUOTES,'UTF-8');
 	$address=htmlspecialchars($_POST["address"],ENT_QUOTES,'UTF-8');
-	$contact_number=htmlspecialchars($_POST["contact_number"],ENT_QUOTES,'UTF-8');
+	$contact_number=intval($_POST["contact_number"]);
 	$additional_info=htmlspecialchars($_POST["additional_info"],ENT_QUOTES,'UTF-8');
-	$total_price=htmlspecialchars($_POST["total_price"],ENT_QUOTES,'UTF-8');
 
 
 	$books=json_decode($_POST["books"],true);
@@ -43,10 +43,6 @@ if(isset($_POST["town"],$_POST["address"],$_POST["contact_number"],$_POST["addit
 
 	if($town=="თბილისი")$book_info[2]=$book_info[2]+3;
 	else $book_info[2]=$book_info[2]+6;
-
-
-	$con = mysqli_connect("localhost","root","","ordered_books");
-	$con->set_charset("utf8");
 
 
 	if($con->query("insert into `orders` (town,address,contact_number,contact_info,price,books,book_prices) values ('".$town."','".$address."','".$contact_number."','".$additional_info."','".$book_info[2]."','".$book_info[0]."','".$book_info[1]."')")==true){
