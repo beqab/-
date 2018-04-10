@@ -246,7 +246,7 @@
   <div class="kalata_auther">
   		<div class="your_order">თქვენი შეკვეთა</div>
   	<div class="order_sum_price">
-  		ჯამი: <span class="all_pice">x</span> ლარი
+  		ჯამი: <span class="all_pice" id="book_price">x</span> ლარი
   	</div>
   	<button class="book_order_btn">
   		შეკვეთა
@@ -290,6 +290,7 @@
     height: 100px !important;
     padding: 4px 8px !important;
     font-size: 18px !important;" class="ttextt" placeholder="დატოვე კომენტარი"></textarea>
+    <span id="price_total"></span>
 </form>
 	</div>
 
@@ -300,7 +301,7 @@
 
 
 <script type="text/javascript">
-
+	var city_price=0;
 	$('#town').change(function(){
 		  if($(this).val() != 'ქალაქი'){
              $('.shipping').css('display','inline')
@@ -318,12 +319,20 @@
 		if($("#contact_number").val()[0]!='5'){alert("ტელეფონის ნომერი 5-ით უნდა იწყებოდეს");return;}
 
 
+		if(ordered_book.length==0){alert("თქვენ არ აგირჩევიათ არცერთი წიგნი");return;}
+
   		$.post('add_to_database.php', {town: $("#town").val(),address: $("#address").val(),contact_number: $("#contact_number").val(), additional_info: $("#additional_info").val(), books: JSON.stringify(ordered_book),}, function(data){
   			if(data=="Success"){
   				setTimeout(function(){ 
 	          	$('.bbtest').addClass('hidden_somthing') }, 2000);
 	            $('.hidden_somthing').removeClass('hidden_somthing')
 	            $('.enter_addres').addClass('hidden_somthing')
+	            $(".kalata_inner").html("");
+	            ordered_book=[];
+	            all_price=0;
+	            $("#book_price").html("0");
+	            $('.kalata_auther').css('display',"none");
+
   			}else{
   				alert("დაფიქსირდა შეცდომა");
   			}
@@ -352,6 +361,7 @@ var leftStart =$('.start_by_book').position().left;
 
 $('.book_order_btn').click(function(){
 	$('.enter_addres').removeClass('hidden_somthing')
+	$("#price_total").html("ჯამი: "+(all_price+city_price)+" ლარი");
 })
 
 
@@ -370,10 +380,12 @@ $('.book_info select').each(function(){
 
 	$('#town').change(function(){
 		  if($(this).val() != 'ქალაქი'){
-		  	if($("#town").val() =="თბილისი")$("#shipping").text(" მიტანა 3 ლარი");
-		  	else $("#shipping").text(" მიტანა 6 ლარი");
+		  	if($("#town").val() =="თბილისი"){$("#shipping").text(" მიტანა 3 ლარი");city_price=3;}
+		  	else {$("#shipping").text(" მიტანა 6 ლარი");city_price=6;}
 
-             $('.shipping').css('display','inline')
+             $('.shipping').css('display','inline');
+
+             $('#price_total').html("ჯამი: "+(city_price+all_price)+" ლარი");
 		  }
 	})
 
@@ -425,6 +437,8 @@ $(".block_book").each(function(){
   }
   cur=cur.substring(0,len);
   ordered_book.push({book_id:item,class:parseInt(cur),price:prive});
+
+  $("#price_total").html("ჯამი: "+(city_price+all_price)+" ლარი");
 }
 else{
 selectVal.find('select').css('border-color','red')
@@ -446,7 +460,6 @@ selectVal.find('select').css('border-color','red')
 
 		$(this).parent().parent().remove();
 		// console.log($(this).attr('data-price')*1, all_price)
-		console.log($(this).attr('data-price')*1, $('.all_pice').text()*1 )
 		 if(($(this).attr('data-price')*1 - $('.all_pice').text()*1)==0){
             $('.kalata_auther').css("display",'none')
 		 }
@@ -455,7 +468,7 @@ selectVal.find('select').css('border-color','red')
         all_price=newprice
 		 $('.all_pice').text(newprice)
 		 
-		
+		$("#price_total").html("ჯამი: "+(all_price+city_price)+" ლარი");
 	})
 // })
 
