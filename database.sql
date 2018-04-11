@@ -7,7 +7,7 @@ create table orders(
 	id int,
 	town varchar(150),
 	address varchar(500),
-	contact_number varchar(100),
+	contact_number int(100),
 	contact_info varchar(100),
 	price int,
 	books varchar(2000),
