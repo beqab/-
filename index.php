@@ -349,6 +349,7 @@ var leftStart =$('.start_by_book').position().left;
                              'width':'0%',});
 		   $('.close_page').addClass('hidden_somthing')
 		   $('.kalata_auther').css('display','none')
+		   $(".enter_addres").addClass("hidden_somthing");
  }
 	
 		
