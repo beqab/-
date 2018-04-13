@@ -1,0 +1,398 @@
+/*frame work top */
+
+.start_by_book{
+  position: absolute;
+  left: 200px;
+  top: 50%;
+  z-index: 1;
+}
+.buy_book_page{
+  background: #fff;
+  width: 0%;
+  min-height:0vh;
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  transition: 0.5s;
+  z-index: 2;
+  overflow: hidden;
+}
+.container_book{
+  width: 80%;
+  padding-right: 20%;
+  padding-left: 3%;
+  display: flex;
+  justify-content: space-between;
+   flex-wrap: no-wrap;
+}
+.buy_book_page{
+
+}
+.block_book .weiting_book{
+      background: #7ab1cec2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 94%;
+    height: 91%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    left: 47%;
+    top: 50%;
+    padding: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+}
+.block_book{
+   display: inline-block;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   display:  flex;
+   position: relative;
+
+}
+.weiting_book{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background: 
+}
+.img_book img{
+  width: 100%;
+}
+.img_book{
+  width: 50%;
+  display: inline-block;
+ 
+
+}
+.book_info > span{
+  font-size: 25px;
+  display: block;
+}
+.book_info{
+  /* display: inline-block; */
+  vertical-align: top;
+  display:  flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  padding-bottom: 2vw;
+  padding-top: 1vw;
+  margin-left: 7px;
+}
+.book_info select option:nth-child(odd) {
+   background: #ECECEC;
+}
+.book_info select {
+        font-size: 17px;
+        color: #707070;
+        border: 1px solid #707070;
+        padding: 3px 6px 8px;
+}
+.book_info button {
+ background: #75AC80;
+ border-radius: 2px;
+ border:1px solid #707070;
+ font-size: 17px;
+ padding: 4px 8px 6px;
+
+}
+.kalata{
+ position: fixed;
+    right: -1px;
+    box-sizing: border-box;
+    top: 10%;
+    /* transform: translate(0%, 100%); */
+    border: 1px solid #707070;
+    max-width: 20vw;
+    width: 100%;
+    padding: 4px 3px 30px;
+    min-height: 350px;
+    z-index: 5;
+    background: #fff;
+    box-shadow: 0 0 6px #0000005e;
+    
+}
+.kalata_inner{
+  max-height: 308px;
+    overflow-x: hidden;
+}
+.kalata_inner .product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #707070;
+  padding-bottom: 4px;
+  padding-top: 7px;
+  font-size: 15px;
+  border-bottom: 1px solid #707070;
+}
+.kalata_auther .your_order{
+      position: absolute;
+    left: 12px;
+    top: -28px;
+    font-size: 15px;
+    color: #707070;
+}
+.kalata img.book {
+   width: 40px;
+   margin-right: 10px;
+}
+.kalata_inner .delet_poduct{
+  width: 15px;
+  cursor: pointer;
+
+}
+.book_order_btn{
+  background: #75ac80;
+  color: #000;
+  font-size: 15px;
+  font-weight:  bold;
+  border-radius: 2px;
+  padding: 3px 8px 6px;
+  border: 1px solid #707070;
+  right: 10px;
+  position: absolute;
+  bottom: -42px;
+  cursor: pointer;
+}
+.order_sum_price{
+  position: absolute;
+  bottom: 10px;
+  font-size: 15px;
+  right: 10px;
+  z-index:  11;
+}
+.product .rights{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+}
+.enter_addres.book{
+  max-width: 700px;
+  width: 100%;
+  max-height: 340px;
+  height: 100%;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  background: #fff;
+  border:1px solid #A4A4A4;
+  box-shadow: 0 0 6px #00000063;
+  padding: 26px;
+  box-sizing: border-box;
+}
+.enter_addres.book select, .enter_addres.book input{
+   border:1px solid #707070;
+   font-size: 18px;
+   padding: 4px 8px 6px;
+   width: 130px;
+}
+.enter_addres.book select option:first-child{
+
+      display: none !important;
+  }
+.enter_addres.book input{
+      width: 250px;
+}
+.complate_ordder{
+      max-width: 400px;
+    width: 100%;
+    max-height: 240px;
+    height: 100%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+
+    z-index: 11;
+    background: #fff;
+    border: 1px solid #A4A4A4;
+    box-shadow: 0 0 6px #00000063;
+    padding: 26px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+textarea.ttextt{
+    max-width: 400px !important;
+    height: 100px !important;
+    padding: 4px 8px !important;
+    font-size: 18px !important;
+}
+.enter_addres.book form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.cancel_adders img{
+  width: 15px;
+  cursor: pointer;
+
+}
+.kalata_auther{
+  position: absolute;
+      position: fixed;
+    right: -1px;
+    top: 10%;
+        max-width: 20vw;
+    width: 100%;
+    /*padding: 4px 3px 30px;*/
+    min-height: 350px;
+}
+.cancel_adders.book{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.hidden_somthing{
+  display: none;
+}
+.oreder_in_adddres{
+  position: absolute;
+  background: #75AC80;
+  border: 1px solid #707070;
+  border-radius: 2px;
+  font-size: 19px;
+  padding: 4px 8px 6px;
+  right: 20px;
+  bottom: 20px;
+}
+.kalata_auther{
+  display: none;
+}
+.viblenone{
+  visibility: hidden;
+}
+.close_page_img{
+  cursor: pointer;
+}
+.close_page.book{
+  position: absolute;
+  /*transform: translate(-50%, -50%);*/
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+@media only screen and (max-width: 740px) {
+
+
+   .book_info select{
+     font-size: 11px;
+         padding: 2px 4px 6px;
+   }
+  .book_info button{
+    padding: 3px 4px 5px;
+    font-size: 11px;
+  }
+  .book_info > span {
+    font-size: 17px;
+    display: block;
+}
+.kalata_auther{
+    width: 18vw;
+  }
+  .kalata_auther .kalata{
+    width: 19vw;
+  }
+
+}
+
+@media only screen and (max-width: 580px) {
+   .container_book{
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+  .kalata_auther .kalata {
+    max-width: 29vw;
+    max-height: 300px;
+    width: 100%;
+}
+.book_info select {
+    font-size: 3.5vw;
+}
+.kalata_auther {
+    max-width: 29vw;
+    max-height: 300px;
+    width: 100%;
+
+}
+.order_sum_price{
+  font-size: 11px;
+}
+.kalata_auther .your_order {
+    position: absolute;
+    left: 12px;
+    top: -21px;
+    font-size: 10px;
+    color: #707070;
+}
+.kalata_auther .kalata img.book {
+    width: 25px;
+    margin-right: 3px;
+}
+.kalata_inner .delet_poduct {
+    width: 10px;
+    cursor: pointer;
+}
+.enter_addres.book{
+  padding-bottom: 45px;
+}
+
+.product .rights {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    font-size: 11px;
+}
+.oreder_in_adddres {
+    position: absolute;
+    background: #75AC80;
+    border: 1px solid #707070;
+    border-radius: 2px;
+    font-size: 13px;
+    padding: 4px 8px 6px;
+    right: 20px;
+    bottom: 5px;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+.book_info {
+    /* display: inline-block; */
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     padding-bottom: 7vw; 
+    padding-top: 4vw;
+    margin-left: 7px;
+}
+.book_order_btn {
+    background: #75ac80;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 2px 6px 5px;
+    border: 1px solid #707070;
+    right: 10px;
+    position: absolute;
+    bottom: -31px;
+    cursor: pointer;
+}
+.viblenone{
+  display: none;
+}
+}
