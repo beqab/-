@@ -8,14 +8,14 @@
 }
 .buy_book_page{
   background: #fff;
-  width: 0%;
+  width: 100%;
   min-height:0vh;
   position:absolute;
   left: 0px;
   top: 0px;
-  transition: 0.5s;
   z-index: 2;
   overflow: hidden;
+
 }
 .container_book{
   width: 80%;
@@ -175,7 +175,7 @@
 .enter_addres.book{
   max-width: 700px;
   width: 100%;
-  max-height: 340px;
+  max-height: 450px;
   height: 100%;
   position: fixed;
   transform: translate(-50%,-50%);
