@@ -18,7 +18,7 @@
 		 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book1.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="en1">10 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="en1">7 </span> ლარი</span>
 		 	 	
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
@@ -38,7 +38,7 @@
 		 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book12.png"></div>
 		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="en2">12 </span> ლარი</span>
+		 	 		<span><span class="book_price" id="en2">10 </span> ლარი</span>
 		 	 		<select>
 		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
 		 	 			<option>2 კლასი</option>
@@ -73,8 +73,89 @@
 		 	</div>
 
 	     </div>
-	     <hr>
-	      <div class="container_book">
+    
+	        <hr>
+	         <div class="container_book">
+		 	 <div class="block_book">
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 14 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
+		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
+		 	 	<div class="book_info">
+		 	 		<span><span class="book_price" id="mth1">10 </span> ლარი</span>
+		 	 		<select>
+		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
+		 	 			<option>2 კლასი</option>
+		 	 			<option>3 კლასი</option>
+		 	 			<option>4 კლასი</option>
+		 	 			<option>5 კლასი</option>
+		 	 			<option>6 კლასი</option>
+		 	 			<option>7 კლასი</option>
+		 	 			<option>8 კლასი</option>
+		 	 			<option>9 კლასი</option>
+		 	 		</select>
+		 	 		<button>დამატება</button>
+		 	 </div>
+		 	</div>
+		 	 <div class="block_book">
+		 	 	<?php
+					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
+						?>
+						<div class="weiting_book">
+			 	 		წიგნი გაყიდვაში
+	                       გამოვა 14 მაისიდან
+			 	 		</div>
+			 	 		<?php
+					}
+				?>
+		 	 	<div class="img_book"> <img class="full_img_book" src="images/book7.png"></div>
+		 	 	<div class="book_info">
+		 	 		<span><span class="book_price" id="mth2">12 </span> ლარი</span>
+		 	 		<select>
+		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
+		 	 			<option>2 კლასი</option>
+		 	 			<option>3 კლასი</option>
+		 	 			<option>4 კლასი</option>
+		 	 			<option>5 კლასი</option>
+		 	 			<option>6 კლასი</option>
+		 	 			<option>7 კლასი</option>
+		 	 			<option>8 კლასი</option>
+		 	 			<option>9 კლასი</option>
+		 	 		</select>
+		 	 		<button>დამატება</button>
+		 	 </div>
+		 	</div>
+		 	 	 <div class="block_book">
+		 	 	<div class="img_book"> <img class="full_img_book" src="images/book10.png"></div>
+		 	 	<div class="book_info">
+		 	 		<span><span class="book_price" id="mth3">20 </span> ლარი</span>
+		 	 		<select>
+		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
+		 	 			<option>2 კლასი</option>
+		 	 			<option>3 კლასი</option>
+		 	 			<option>4 კლასი</option>
+		 	 			<option>5 კლასი</option>
+		 	 			<option>6 კლასი</option>
+		 	 			<option>7 კლასი</option>
+		 	 			<option>8 კლასი</option>
+		 	 			<option>9 კლასი</option>
+		 	 		</select>
+		 	 		<button>დამატება</button>
+		 	 </div>
+		 	</div>
+
+	     </div>
+	      
+	        <hr>
+
+	        <div class="container_book">
 		 	 <div class="block_book">
 		 	 	<?php
 					if (new DateTime() <= new DateTime("2018-05-20 00:00:00")) {
@@ -164,87 +245,6 @@
 	      
 	  
         
-    
-	        <hr>
-	         <div class="container_book">
-		 	 <div class="block_book">
-		 	 	<?php
-					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
-						?>
-						<div class="weiting_book">
-			 	 		წიგნი გაყიდვაში
-	                       გამოვა 14 მაისიდან
-			 	 		</div>
-			 	 		<?php
-					}
-				?>
-		 	 	<div class="img_book"> <img class="full_img_book" src="images/book6.png"></div>
-		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="mth1">10 </span> ლარი</span>
-		 	 		<select>
-		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
-		 	 			<option>2 კლასი</option>
-		 	 			<option>3 კლასი</option>
-		 	 			<option>4 კლასი</option>
-		 	 			<option>5 კლასი</option>
-		 	 			<option>6 კლასი</option>
-		 	 			<option>7 კლასი</option>
-		 	 			<option>8 კლასი</option>
-		 	 			<option>9 კლასი</option>
-		 	 		</select>
-		 	 		<button>დამატება</button>
-		 	 </div>
-		 	</div>
-		 	 <div class="block_book">
-		 	 	<?php
-					if (new DateTime() <= new DateTime("2018-05-14 00:00:00")) {
-						?>
-						<div class="weiting_book">
-			 	 		წიგნი გაყიდვაში
-	                       გამოვა 14 მაისიდან
-			 	 		</div>
-			 	 		<?php
-					}
-				?>
-		 	 	<div class="img_book"> <img class="full_img_book" src="images/book7.png"></div>
-		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="mth2">12 </span> ლარი</span>
-		 	 		<select>
-		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
-		 	 			<option>2 კლასი</option>
-		 	 			<option>3 კლასი</option>
-		 	 			<option>4 კლასი</option>
-		 	 			<option>5 კლასი</option>
-		 	 			<option>6 კლასი</option>
-		 	 			<option>7 კლასი</option>
-		 	 			<option>8 კლასი</option>
-		 	 			<option>9 კლასი</option>
-		 	 		</select>
-		 	 		<button>დამატება</button>
-		 	 </div>
-		 	</div>
-		 	 	 <div class="block_book">
-		 	 	<div class="img_book"> <img class="full_img_book" src="images/book10.png"></div>
-		 	 	<div class="book_info">
-		 	 		<span><span class="book_price" id="mth3">20 </span> ლარი</span>
-		 	 		<select>
-		 	 			<option class="hidden_somthing" selected="selected">კლასი</option>
-		 	 			<option>2 კლასი</option>
-		 	 			<option>3 კლასი</option>
-		 	 			<option>4 კლასი</option>
-		 	 			<option>5 კლასი</option>
-		 	 			<option>6 კლასი</option>
-		 	 			<option>7 კლასი</option>
-		 	 			<option>8 კლასი</option>
-		 	 			<option>9 კლასი</option>
-		 	 		</select>
-		 	 		<button>დამატება</button>
-		 	 </div>
-		 	</div>
-
-	     </div>
-	      
-	        <hr>
   <div class="kalata_auther">
   		<div class="your_order">თქვენი შეკვეთა</div>
   	<div class="order_sum_price">
@@ -338,7 +338,6 @@
 	            $('.kalata_auther').css('display',"none");
 
   			}else{
-  				console.log(data);
   				alert("დაფიქსირდა შეცდომა");
   			}
 		});

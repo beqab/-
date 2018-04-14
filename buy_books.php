@@ -5,8 +5,8 @@ include "connection.php";
 
 function parse_books($ordered_books,$book_count){
 	$books=[
-		array("book_id" => "en1", "book_price" => "10","book_name"=>"ტესტები ინგლისურ ენაში"),
-		array("book_id" => "en2", "book_price" => "12","book_name"=>"ტესტები ინგლისურ ენაში ფინალისტებისთვის"),
+		array("book_id" => "en1", "book_price" => "7","book_name"=>"ტესტები ინგლისურ ენაში"),
+		array("book_id" => "en2", "book_price" => "10","book_name"=>"ტესტები ინგლისურ ენაში ფინალისტებისთვის"),
 
 		array("book_id" => "ge1", "book_price" => "10","book_name"=>"ტესტები ქართულ ენაში"),
 		array("book_id" => "ge2", "book_price" => "12","book_name"=>"ტესტები ქართულ ენაში ფინალისტებისთვის"),
