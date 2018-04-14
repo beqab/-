@@ -11,9 +11,6 @@
 
 
 	<div class="buy_book_page">
-		<div onclick="close_books()" class="close_page book">
-			 <img class="close_page_img" src="images/delet_poduct.png">
-		</div>
 		 <div class="container_book">
 		 	 <div class="block_book">
 		 	 	<div class="img_book"> <img class="full_img_book" src="images/book1.png"></div>
