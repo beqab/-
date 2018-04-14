@@ -1,8 +1,3 @@
-
-CREATE DATABASE IF NOT EXISTS ordered_books;
-
-use ordered_books;
-
 create table orders(
 	id int,
 	town varchar(150),
