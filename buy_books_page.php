@@ -10,6 +10,7 @@
 	<div class="start_by_book" style="display:none;">start</div>
 
 
+
 	<div class="buy_book_page">
 		 <div class="container_book">
 		 	 <div class="block_book">

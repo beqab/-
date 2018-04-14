@@ -1,5 +1,6 @@
 create table orders(
 	id int,
+	user_id int,
 	town varchar(150),
 	address varchar(2000),
 	parent_name varchar(500),
